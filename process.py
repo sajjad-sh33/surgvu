@@ -79,13 +79,13 @@ class Surgtoolloc_det(DetectionAlgorithm):
         ###                                                                                                     ###
         self.model = YOLO("best.pt")
         
-        # self.tool_list = ['needle_driver','monopolar_curved_scissor', 'force_bipolar', 'clip_applier', 'cadiere_forceps', 'bipolar_forceps'
-        #                  , 'vessel_sealer', 'permanent_cautery_hook_spatula', 'prograsp_forceps', 'stapler'
-        #                  , 'grasping_retractor', 'tip_up_fenestrated_grasper']
+        self.tool_list = ['needle_driver','monopolar_curved_scissor', 'force_bipolar', 'clip_applier', 'cadiere_forceps', 'bipolar_forceps'
+                         , 'vessel_sealer', 'permanent_cautery_hook_spatula', 'prograsp_forceps', 'stapler'
+                         , 'grasping_retractor', 'tip_up_fenestrated_grasper']
         
-        self.tool_list = ['needle_driver','monopolar_curved_scissors', 'force_bipolar', 'clip_applier', 'cadiere_forceps', 'bipolar_forceps'
-                         , 'vessel_sealer', 'permanent_cautery_hook/spatula', 'prograsp_forceps', 'stapler'
-                         , 'grasping_retractor', 'tip-up_fenestrated_grasper']
+        # self.tool_list = ['needle_driver','monopolar_curved_scissors', 'force_bipolar', 'clip_applier', 'cadiere_forceps', 'bipolar_forceps'
+        #                  , 'vessel_sealer', 'permanent_cautery_hook/spatula', 'prograsp_forceps', 'stapler'
+        #                  , 'grasping_retractor', 'tip-up_fenestrated_grasper']
 
     def process_case(self, *, idx, case):
         # Input video would return the collection of all frames (cap object)
