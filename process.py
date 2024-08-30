@@ -140,8 +140,12 @@ class Surgtoolloc_det(DetectionAlgorithm):
             
             for i in range(len(boxes)):
                 x_c, y_c, w, h = boxes.xywh[i]
+                x_c = x_c.item()
+                y_c = y_c.item()
+                w = w.item()
+                h = h.item()
                 label = boxes.cls[i]
-                probability = boxes.conf[i]
+                probability = boxes.conf[i].item()
                 corners=[[x_c-(w/2), y_c-(h/2), 0.5], [x_c+(w/2), y_c-(h/2), 0.5], [x_c+(w/2), y_c+(h/2), 0.5], [x_c-(w/2), y_c+(h/2), 0.5]]
                 name = f"slice_nr_{frame_count}_" + self.tool_list[int(label)]
                 dict = {'corners':corners,
