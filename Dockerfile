@@ -7,7 +7,7 @@ RUN groupadd -r algorithm && useradd -m --no-log-init -r -g algorithm algorithm
 RUN mkdir -p /opt/algorithm /input /output \
     && chown algorithm:algorithm /opt/algorithm /input /output
 RUN apt-get update
-
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 USER algorithm
 
