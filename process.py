@@ -139,7 +139,7 @@ class Surgtoolloc_det(DetectionAlgorithm):
                 break
                 
             # results = self.model([frame])
-            results = model.predict(frame, imgsz=680, conf=0.5)
+            results = self.model.predict(frame, imgsz=680, conf=0.5)
             boxes = results[0].boxes
             boxes = boxes.numpy()
             
