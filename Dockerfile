@@ -23,6 +23,7 @@ COPY --chown=algorithm:algorithm requirements.txt /opt/algorithm/
 RUN python -m pip install --user -rrequirements.txt
 
 COPY --chown=algorithm:algorithm best.pt /opt/algorithm/
+COPY --chown=algorithm:algorithm bestl.pt /opt/algorithm/
 
 COPY --chown=algorithm:algorithm process.py /opt/algorithm/
 
