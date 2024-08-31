@@ -77,7 +77,7 @@ class Surgtoolloc_det(DetectionAlgorithm):
         ###                                                                                                     ###
         ###  TODO: adapt the following part for creating your model and loading weights
         ###                                                                                                     ###
-        self.model = YOLO("best.pt")
+        self.model = YOLO("bestl.pt")
         
         self.tool_list = ['needle_driver','monopolar_curved_scissor', 'force_bipolar', 'clip_applier', 'cadiere_forceps', 'bipolar_forceps'
                          , 'vessel_sealer', 'permanent_cautery_hook_spatula', 'prograsp_forceps', 'stapler'
@@ -138,7 +138,8 @@ class Surgtoolloc_det(DetectionAlgorithm):
             if not ret:
                 break
                 
-            results = self.model([frame])
+            # results = self.model([frame])
+            results = model.predict(frame, imgsz=680, conf=0.5)
             boxes = results[0].boxes
             boxes = boxes.numpy()
             
